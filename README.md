@@ -3,37 +3,46 @@
 
 # Classifying the visibility of ID cards in photos
 
-The folder images inside data contains several different types of ID documents taken in different conditions and backgrounds. The goal is to use the images stored in this folder and to design an algorithm that identifies the visibility of the card on the photo (FULL_VISIBILITY, PARTIAL_VISIBILITY, NO_VISIBILITY).
+The folder of images contains several different types of ID documents taken in different conditions and backgrounds. The goal is to use the images stored in this folder and to design an algorithm that identifies the visibility of the card on the photo (FULL_VISIBILITY, PARTIAL_VISIBILITY, NO_VISIBILITY).
 
 ## Data
 
 Inside the data folder you can find the following:
-- labels.csv
-- train
-    - full_visibility
-    - partial_visibility
-    - no_visibility
-- val
-    - full_visibility
-    - partial_visibility
-    - no_visibility
-- test
-    - full_visibility
-    - partial_visibility
-    - no_visibility
+- gicsd_labels.csv
+- original_images
+- split_augmented_images
+    - labels.csv
+    - train
+        - full_visibility
+        - partial_visibility
+        - no_visibility
+    - val
+        - full_visibility
+        - partial_visibility
+        - no_visibility
+    - test
+        - full_visibility
+        - partial_visibility
+        - no_visibility
 
-### 1) Folder images
-Folders containing the modified, split challenge images that was used to train the classification model.
+### original_images
+[original_images](data/original_images) contains the original images. Original dataset from [MIDV-500]((https://arxiv.org/abs/1807.05786)): A Dataset for Identity Documents Analysis and Recognition on Mobile Devices in Video Stream.
 
-### 2) labels.csv
-A CSV file mapping each challenge image with its correct label, location on Google Cloud and whether it was used to train validate or test the model.
+### gicsd_labels.csv
+[gicsd_labels.csv](data/gicsd_labels.csv) contains the ground truth labels for the original images.
+
+### split_augmented_images
+[split_augmented_images](data/split_augmented_images) contains the modified, split images that was used to train the classification model.
+
+### split_augmented_images/labels.csv
+[labels.csv](data/split_augmented_images/labels.csv) is a file mapping each challenge image with its correct label, location on Google Cloud and whether it was used to train validate or test the model.
 - **SET**: Whether it was used to train, validate or test the model. 
 - **GCS_URI**: GCS location of each image.
 - **LABEL**: The label of each image, which can be one of these values: FULL_VISIBILITY, PARTIAL_VISIBILITY or NO_VISIBILITY. 
     
 ## Dependencies
 
-- Make  sure you have [gcloud](https://cloud.google.com/sdk/downloads#interactive) command line tool installed
+- Make sure you have [gcloud](https://cloud.google.com/sdk/downloads#interactive) command line tool installed
 - Set environment variable to the path to the AutoMLservice account key JSON that authenticates the prediction model usage. 
 `export GOOGLE_APPLICATION_CREDENTIALS=path-to-key-file`
 - Install requirements
@@ -96,5 +105,4 @@ See [Visibility_Classification.ipynb](Visibility_Classification.ipynb) for the f
     - data augmentation of test image if model is unsure
     - collect average label of those classes
 * Research & build a custom NN model, e.g. with Tensorflow or Keras, do k fold x-validations, train model on modified instances of the original image (vs saving all modified images to build the AutoML model on)
-* Configure Docker file
 * Delete low quality images in each class (images that are difficult to label by human eye) to increase model accuracy
