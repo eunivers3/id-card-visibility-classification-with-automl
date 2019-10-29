@@ -104,5 +104,5 @@ See [Visibility_Classification.ipynb](Visibility_Classification.ipynb) for the f
 * TTA (test time augmentation)
     - data augmentation of test image if model is unsure
     - collect average label of those classes
-* Research & build a custom NN model, e.g. with Tensorflow or Keras, do k fold x-validations, train model on modified instances of the original image (vs saving all modified images to build the AutoML model on)
+* Research & build a custom CNN model, e.g. with Tensorflow or Keras, do k fold x-validations, train model on modified instances of the original image (vs saving all modified images to build the AutoML model on)
 * Delete low quality images in each class (images that are difficult to label by human eye) to increase model accuracy
