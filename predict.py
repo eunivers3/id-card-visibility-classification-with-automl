@@ -18,7 +18,7 @@ config = json.loads(config)
 project_id = config.get("PROJECT_ID")
 model_id = config.get("MODEL_ID")
 score_threshold = config.get("MODEL_SCORE_THRESHOLD")
-# os.environ['GOOGLE_APPLICATION_CREDENTIALS']="revolut-ids-646443f7769b.json"
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS']="[PATH]"
 
 def process_image(infile_path,outfile_path):
     """convert RGB image to  1x channel, add gaussian filter and write to file"""
