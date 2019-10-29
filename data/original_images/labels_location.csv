@@ -1,0 +1,3 @@
+gs://revolut-ids-vcm/full_visibility/*.png,FULL_VISIBILITY
+gs://revolut-ids-vcm/no_visibility/*.png,NO_VISIBILITY
+gs://revolut-ids-vcm/partial_visibility/*.png,PARTIAL_VISIBILITY
