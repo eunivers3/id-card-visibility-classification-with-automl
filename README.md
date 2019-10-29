@@ -26,7 +26,7 @@ Inside the data folder you can find the following:
         - no_visibility
 
 ### original_images
-[original_images](data/original_images) contains the original images. Original dataset from [MIDV-500]((https://arxiv.org/abs/1807.05786)): A Dataset for Identity Documents Analysis and Recognition on Mobile Devices in Video Stream.
+[original_images](data/original_images) contains the original images. Original dataset from [MIDV-500](https://arxiv.org/abs/1807.05786): A Dataset for Identity Documents Analysis and Recognition on Mobile Devices in Video Stream.
 
 ### gicsd_labels.csv
 [gicsd_labels.csv](data/gicsd_labels.csv) contains the ground truth labels for the original images.
