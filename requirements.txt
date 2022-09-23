@@ -1,4 +1,4 @@
 scipy==1.2.1
 opencv_python==4.1.1.26
-protobuf==3.10.0
+protobuf==3.18.3
 google-cloud-automl==0.5.0
